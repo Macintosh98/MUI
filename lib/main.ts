@@ -1,1 +1,1 @@
-export { Card } from "./Card/index.tsx";
+export { default as MUI } from "./MUI";
