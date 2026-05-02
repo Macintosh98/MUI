@@ -22,11 +22,12 @@ export default defineConfig({
         buildMode: true,
         tsconfigPath: "./tsconfig.app.json",
       },
-      eslint: {
-        useFlatConfig: true,
-        watchPath: "./src/**/*.{js,jsx,ts,tsx}",
-        lintCommand: 'eslint "./src/**/*.{js,jsx,ts,tsx}"',
-      },
+      // not working in build mode its getting hang
+      // eslint: {
+      //   useFlatConfig: true,
+      //   watchPath: "./src/**/*.{js,jsx,ts,tsx}",
+      //   lintCommand: 'eslint "./src/**/*.{js,jsx,ts,tsx}"',
+      // },
     }),
   ],
   build: {
