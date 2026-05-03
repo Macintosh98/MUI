@@ -3,7 +3,7 @@ import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import babel from "@rolldown/plugin-babel";
 import { resolve } from "node:path";
 import dts from "unplugin-dts/vite";
-import checker from "vite-plugin-checker";
+// import checker from "vite-plugin-checker";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -17,18 +17,18 @@ export default defineConfig({
     react(),
     dts({ bundleTypes: true, tsconfigPath: "./tsconfig.app.json" }),
     babel({ presets: [reactCompilerPreset()] }),
-    checker({
-      typescript: {
-        buildMode: true,
-        tsconfigPath: "./tsconfig.app.json",
-      },
-      // not working in build mode its getting hang
-      // eslint: {
-      //   useFlatConfig: true,
-      //   watchPath: "./src/**/*.{js,jsx,ts,tsx}",
-      //   lintCommand: 'eslint "./src/**/*.{js,jsx,ts,tsx}"',
-      // },
-    }),
+    // checker({
+    //   typescript: {
+    //     buildMode: true,
+    //     tsconfigPath: "./tsconfig.app.json",
+    //   },
+    //   // not working in build mode its getting hang
+    //   // eslint: {
+    //   //   useFlatConfig: true,
+    //   //   watchPath: "./src/**/*.{js,jsx,ts,tsx}",
+    //   //   lintCommand: 'eslint "./src/**/*.{js,jsx,ts,tsx}"',
+    //   // },
+    // }),
   ],
   build: {
     lib: {

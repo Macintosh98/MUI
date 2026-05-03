@@ -1,7 +1,7 @@
 {
   "name": "@abhishekzambare/mui",
   "description": "MUI Wrapper",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "author": "Abhishek Zambare",
   "license": "MIT",
   "private": false,
@@ -43,6 +43,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@eslint/js": "^10.0.1",
+    "@microsoft/api-extractor": "^7.58.7",
     "@mui/material": "^9.0.0",
     "@rolldown/plugin-babel": "^0.2.3",
     "@types/babel__core": "^7.20.5",
