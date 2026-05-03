@@ -1,1 +1,1 @@
-export { default as useThemeSlice, type ThemeSliceType } from "./useThemeSlice";
+export { MUIThemeContextProvider, useMUIThemeContext } from "./MainContext";
