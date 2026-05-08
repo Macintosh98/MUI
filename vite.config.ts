@@ -6,7 +6,7 @@ import dts from "unplugin-dts/vite";
 import checker from "vite-plugin-checker";
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   server: {
     port: 3000,
   },
@@ -17,18 +17,19 @@ export default defineConfig({
     react(),
     dts({ bundleTypes: true, tsconfigPath: "./tsconfig.app.json" }),
     babel({ presets: [reactCompilerPreset()] }),
-    checker({
-      typescript: {
-        buildMode: true,
-        tsconfigPath: "./tsconfig.app.json",
-      },
-      // not working in build mode its getting hang
-      // eslint: {
-      //   useFlatConfig: true,
-      //   watchPath: "./src/**/*.{js,jsx,ts,tsx}",
-      //   lintCommand: 'eslint "./src/**/*.{js,jsx,ts,tsx}"',
-      // },
-    }),
+    mode === "development" &&
+      checker({
+        typescript: {
+          buildMode: true,
+          tsconfigPath: "./tsconfig.app.json",
+        },
+        // not working in build mode its getting hang
+        eslint: {
+          useFlatConfig: true,
+          watchPath: "./src/**/*.{js,jsx,ts,tsx}",
+          lintCommand: 'eslint "./src/**/*.{js,jsx,ts,tsx}"',
+        },
+      }),
   ],
   build: {
     lib: {
@@ -45,4 +46,4 @@ export default defineConfig({
       ],
     },
   },
-});
+}));

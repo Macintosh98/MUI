@@ -6,7 +6,7 @@ function manualOverrides(theme: Theme) {
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          backgroundColor: "#444",
+          // backgroundColor: "#444",
         },
       },
     },
