@@ -5,8 +5,8 @@ function manualOverrides(theme: Theme) {
   return {
     MuiCssBaseline: {
       styleOverrides: {
-        body: {
-          // backgroundColor: "#444",
+        html: {
+          ...(theme.palette.mode === "dark" && {backgroundColor: theme.palette.background.paper}),
         },
       },
     },
