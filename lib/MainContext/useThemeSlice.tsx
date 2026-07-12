@@ -6,21 +6,23 @@ function manualOverrides(theme: Theme) {
     MuiCssBaseline: {
       styleOverrides: {
         html: {
-          ...(theme.palette.mode === "dark" && {backgroundColor: theme.palette.background.paper}),
+          ...(theme.palette.mode === "dark" && {
+            backgroundColor: theme.palette.background.paper,
+          }),
         },
       },
     },
     MuiSvgIcon: {
       defaultProps: {
         fontSize: "small",
-        color: "action",
+        // color: "action",
       },
       styleOverrides: {
         root: {
-          fill:
-            theme.palette.mode === "light"
-              ? alpha(theme.palette.common.black, 0.6)
-              : alpha(theme.palette.common.white, 0.6),
+          // fill:
+          //   theme.palette.mode === "light"
+          //     ? alpha(theme.palette.common.black, 0.6)
+          //     : alpha(theme.palette.common.white, 0.6),
         },
       },
     },

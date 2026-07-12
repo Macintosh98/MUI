@@ -180,6 +180,18 @@ function App() {
             startElement={[<Typography variant="h3">Select</Typography>]}
             endElement={[
               <FormControl fullWidth>
+                <Select
+                  labelId="demo-simple-select-label"
+                  id="demo-simple-select"
+                  label="Age"
+                  defaultValue={10}
+                >
+                  <MenuItem value={10}>Ten</MenuItem>
+                  <MenuItem value={20}>Twenty</MenuItem>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+              </FormControl>,
+              <FormControl fullWidth>
                 <InputLabel id="demo-simple-select-label">Age</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
@@ -254,6 +266,7 @@ function App() {
           <RowBox
             startElement={[<Typography variant="h3">TextField</Typography>]}
             endElement={[
+              <TextField placeholder={"Enter Your Email"} />,
               <TextField
                 id="outlined-basic"
                 label="Outlined"
