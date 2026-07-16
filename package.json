@@ -1,7 +1,7 @@
 {
   "name": "@abhishekzambare/mui",
   "description": "MUI Wrapper",
-  "version": "0.0.22",
+  "version": "0.0.23",
   "author": "Abhishek Zambare",
   "license": "MIT",
   "private": false,
@@ -39,12 +39,12 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@abhishekzambare/animate": "^0.0.4",
+    "@abhishekzambare/animate": "^0.0.5",
     "@babel/core": "^8.0.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@eslint/js": "^10.0.1",
-    "@microsoft/api-extractor": "^7.58.9",
+    "@microsoft/api-extractor": "^7.58.10",
     "@mui/icons-material": "^9.2.0",
     "@mui/material": "^9.2.0",
     "@rolldown/plugin-babel": "^0.2.3",
@@ -64,7 +64,7 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "typescript": "~7.0.2",
-    "typescript-eslint": "^8.63.0",
+    "typescript-eslint": "^8.64.0",
     "unplugin-dts": "^1.0.3",
     "vite": "^8.1.4",
     "vite-plugin-checker": "^0.14.4"
