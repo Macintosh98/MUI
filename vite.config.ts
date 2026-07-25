@@ -7,7 +7,7 @@ import checker from "vite-plugin-checker";
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/", 
+  base: "/",
   server: {
     port: 3000,
   },
@@ -32,19 +32,22 @@ export default defineConfig(({ mode }) => ({
         },
       }),
   ],
-  build: {
-    lib: {
-      entry: resolve(import.meta.dirname, "lib/main.ts"),
-      name: "Mui",
-      fileName: "mui",
-      formats: ["es"],
-    },
-    rolldownOptions: {
-      plugins: [
-        esmExternalRequirePlugin({
-          external: [/^react(-dom)?(\/.+)?$/],
-        }),
-      ],
-    },
-  },
+  build:
+    process.env.VERCEL !== "1"
+      ? {
+          lib: {
+            entry: resolve(import.meta.dirname, "lib/main.ts"),
+            name: "Mui",
+            fileName: "mui",
+            formats: ["es"],
+          },
+          rolldownOptions: {
+            plugins: [
+              esmExternalRequirePlugin({
+                external: [/^react(-dom)?(\/.+)?$/],
+              }),
+            ],
+          },
+        }
+      : {},
 }));
