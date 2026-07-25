@@ -16,7 +16,8 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    dts({ bundleTypes: true, tsconfigPath: "./tsconfig.app.json" }),
+    process.env.VERCEL !== "1" &&
+      dts({ bundleTypes: true, tsconfigPath: "./tsconfig.app.json" }),
     babel({ presets: [reactCompilerPreset()] }),
     mode === "development" &&
       checker({
