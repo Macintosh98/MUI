@@ -1,7 +1,7 @@
 {
   "name": "@abhishekzambare/mui",
   "description": "MUI Wrapper",
-  "version": "0.0.25",
+  "version": "0.0.28",
   "author": "Abhishek Zambare",
   "license": "MIT",
   "private": false,
@@ -16,12 +16,12 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/mui.umd.cjs",
+  "main": "./dist/mui.cjs",
   "module": "./dist/mui.js",
   "exports": {
     ".": {
       "import": "./dist/mui.js",
-      "require": "./dist/mui.umd.cjs"
+      "require": "./dist/mui.cjs"
     }
   },
   "homepage": "https://abhishekzambare-mui.vercel.app/",
@@ -75,6 +75,7 @@
     "@mui/material": "^9",
     "@mui/icons-material": "^9",
     "@emotion/react": "^11",
-    "@emotion/styled": "^11"
+    "@emotion/styled": "^11",
+    "@abhishekzambare/animate": "^0.0.5"
   }
 }

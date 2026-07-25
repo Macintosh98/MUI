@@ -50,6 +50,7 @@ export default defineConfig(({ mode }) => ({
               "@mui/icons-material",
               "@emotion/react",
               "@emotion/styled",
+              "@abhishekzambare/animate",
             ],
             plugins: [
               esmExternalRequirePlugin({
