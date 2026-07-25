@@ -18,7 +18,7 @@ export default defineConfig(({ mode }) => ({
     react(),
     process.env.VERCEL !== "1" &&
       dts({ bundleTypes: true, tsconfigPath: "./tsconfig.app.json" }),
-    babel({ presets: [reactCompilerPreset()] }),
+    mode === "development" && babel({ presets: [reactCompilerPreset()] }),
     mode === "development" &&
       checker({
         typescript: {
@@ -40,9 +40,17 @@ export default defineConfig(({ mode }) => ({
             entry: resolve(import.meta.dirname, "lib/main.ts"),
             name: "Mui",
             fileName: "mui",
-            formats: ["es"],
+            formats: ["es", "cjs"],
           },
           rolldownOptions: {
+            external: [
+              "react",
+              "react-dom",
+              "@mui/material",
+              "@mui/icons-material",
+              "@emotion/react",
+              "@emotion/styled",
+            ],
             plugins: [
               esmExternalRequirePlugin({
                 external: [/^react(-dom)?(\/.+)?$/],

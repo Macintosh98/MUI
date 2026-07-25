@@ -1,7 +1,7 @@
 {
   "name": "@abhishekzambare/mui",
   "description": "MUI Wrapper",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "author": "Abhishek Zambare",
   "license": "MIT",
   "private": false,
@@ -71,6 +71,10 @@
   },
   "peerDependencies": {
     "react": "^19",
-    "react-dom": "^19"
+    "react-dom": "^19",
+    "@mui/material": "^9",
+    "@mui/icons-material": "^9",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11"
   }
 }
