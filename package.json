@@ -24,7 +24,7 @@
       "require": "./dist/mui.umd.cjs"
     }
   },
-  "homepage": "https://github.com/Macintosh98/MUI",
+  "homepage": "https://abhishekzambare-mui.vercel.app/",
   "bugs": {
     "url": "https://github.com/Macintosh98/MUI/issues"
   },
