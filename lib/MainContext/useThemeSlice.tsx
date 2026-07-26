@@ -426,6 +426,50 @@ function manualOverrides(theme: Theme) {
         },
       },
     },
+    MuiSwitch: {
+      styleOverrides: {
+        root: {
+          width: 35,
+          height: 20,
+          padding: 0,
+          "& .MuiSwitch-switchBase": {
+            padding: 0,
+            margin: 2,
+            transitionDuration: "500ms",
+            color: "#fff",
+            "&.Mui-checked": {
+              color: "#fff",
+              transform: "translateX(16px)",
+              "& + .MuiSwitch-track": {
+                backgroundColor: theme.palette.secondary.main,
+                border: "1px solid " + theme.palette.action.hover,
+
+                opacity: 1,
+              },
+            },
+            "&.Mui-disabled .MuiSwitch-thumb": {
+              color: theme.palette.grey[100],
+            },
+            "&.Mui-disabled + .MuiSwitch-track": {
+              opacity: 0.7,
+            },
+          },
+          "& .MuiSwitch-thumb": {
+            boxSizing: "border-box",
+            width: 15,
+            height: 15,
+          },
+          "& .MuiSwitch-track": {
+            borderRadius: 26 / 2,
+            backgroundColor: theme.palette.action.active,
+            boxShadow: theme.shadows[1],
+            transition: theme.transitions.create(["background-color"], {
+              duration: 500,
+            }),
+          },
+        },
+      },
+    },
   } as any;
 }
 
