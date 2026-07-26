@@ -418,6 +418,14 @@ function manualOverrides(theme: Theme) {
         },
       },
     },
+    MuiListItemButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: theme.shape.borderRadius,
+          margin: "0 10px",
+        },
+      },
+    },
   } as any;
 }
 
