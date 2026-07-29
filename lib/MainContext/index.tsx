@@ -5,30 +5,36 @@ import useThemeSlice, { type ThemeSliceType } from "./useThemeSlice";
 const MUIThemeContext = createContext<ThemeSliceType | null>(null);
 
 export function useMUIThemeContext() {
-  const context = useContext(MUIThemeContext);
-  if (!context) {
-    throw new Error("useMUIThemeContext must be used within its provider");
-  }
+    const context = useContext(MUIThemeContext);
+    if (!context) {
+        throw new Error(
+            "useMUIThemeContext must be used within its provider",
+        );
+    }
 
-  return context;
+    return context;
 }
 
 export function MUIThemeContextProvider({
-  children,
+    children,
 }: {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }) {
-  const contextValues = {
-    ...useThemeSlice(),
-  };
+    const contextValues = {
+        ...useThemeSlice(),
+    };
 
-  useEffect(() => {
-    console.log(
-      "%c Current MUITheme Context : ",
-      "font-size: 16px; font-weight: bold; color: green; font-family: cursive;",
-      contextValues,
+    useEffect(() => {
+        console.log(
+            "%c Current MUITheme Context : ",
+            "font-size: 16px; font-weight: bold; color: green; font-family: cursive;",
+            contextValues,
+        );
+    }, Object.values(contextValues));
+
+    return (
+        <MUIThemeContext value={contextValues}>
+            {children}
+        </MUIThemeContext>
     );
-  }, Object.values(contextValues));
-
-  return <MUIThemeContext value={contextValues}>{children}</MUIThemeContext>;
 }

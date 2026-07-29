@@ -24,19 +24,19 @@ import { useMUIThemeContext } from "@abhishekzambare/mui";
 import { Button, Stack, ThemeProvider } from "@mui/material";
 
 function App() {
-  const theme = useMUIThemeContext();
+    const theme = useMUIThemeContext();
 
-  return (
-    <ThemeProvider theme={theme.Theme_WebApp_Theme}>
-      <>
-        <Stack spacing={2} direction="row">
-          <Button variant="text">Text</Button>
-          <Button variant="contained">Contained</Button>
-          <Button variant="outlined">Outlined</Button>
-        </Stack>
-      </>
-    </ThemeProvider>
-  );
+    return (
+        <ThemeProvider theme={theme.Theme_WebApp_Theme}>
+            <>
+                <Stack spacing={2} direction="row">
+                    <Button variant="text">Text</Button>
+                    <Button variant="contained">Contained</Button>
+                    <Button variant="outlined">Outlined</Button>
+                </Stack>
+            </>
+        </ThemeProvider>
+    );
 }
 
 export default App;
@@ -45,24 +45,27 @@ export default App;
 # 3 use the theme component to change theme colors use it anywere but within the provider tree
 
 ```js
-import { useMUIThemeContext, YinYangThemesMenu } from "@abhishekzambare/mui";
+import {
+    useMUIThemeContext,
+    YinYangThemesMenu,
+} from "@abhishekzambare/mui";
 import { Button, Stack, ThemeProvider } from "@mui/material";
 
 function App() {
-  const theme = useMUIThemeContext();
+    const theme = useMUIThemeContext();
 
-  return (
-    <ThemeProvider theme={theme.Theme_WebApp_Theme}>
-      <>
-        <Stack spacing={2} direction="row">
-          <Button variant="text">Text</Button>
-          <Button variant="contained">Contained</Button>
-          <Button variant="outlined">Outlined</Button>
-        </Stack>
-        <YinYangThemesMenu />
-      </>
-    </ThemeProvider>
-  );
+    return (
+        <ThemeProvider theme={theme.Theme_WebApp_Theme}>
+            <>
+                <Stack spacing={2} direction="row">
+                    <Button variant="text">Text</Button>
+                    <Button variant="contained">Contained</Button>
+                    <Button variant="outlined">Outlined</Button>
+                </Stack>
+                <YinYangThemesMenu />
+            </>
+        </ThemeProvider>
+    );
 }
 
 export default App;

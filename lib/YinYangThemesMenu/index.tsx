@@ -4,14 +4,16 @@ import { useMUIThemeContext } from "../MainContext";
 import YinYangThemesMenu from "./YinYangThemesMenuProvider";
 
 function WithTheme() {
-  const MUIThemeContext = useMUIThemeContext();
+    const MUIThemeContext = useMUIThemeContext();
 
-  return (
-    <CustomThemeProvider theme={MUIThemeContext.Theme_WebApp_Theme}>
-      <CssBaseline />
-      <YinYangThemesMenu></YinYangThemesMenu>
-    </CustomThemeProvider>
-  );
+    return (
+        <CustomThemeProvider
+            theme={MUIThemeContext.Theme_WebApp_Theme}
+        >
+            <CssBaseline />
+            <YinYangThemesMenu></YinYangThemesMenu>
+        </CustomThemeProvider>
+    );
 }
 
 export default WithTheme;

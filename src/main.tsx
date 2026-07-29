@@ -5,9 +5,9 @@ import App from "./App.tsx";
 import { MUIThemeContextProvider } from "@abhishekzambare/mui";
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <MUIThemeContextProvider>
-      <App />
-    </MUIThemeContextProvider>
-  </StrictMode>,
+    <StrictMode>
+        <MUIThemeContextProvider>
+            <App />
+        </MUIThemeContextProvider>
+    </StrictMode>,
 );
