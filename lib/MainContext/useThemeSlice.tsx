@@ -10,6 +10,7 @@ import {
     useTheme,
     type Theme,
 } from "@mui/material";
+import useSkipFirstEffect from "../useSkipFirstEffect";
 
 function manualOverrides(theme: Theme) {
     return {
@@ -1613,7 +1614,7 @@ const useThemeSlice = () => {
         setTheme_SecondaryColor(ForYinYang_ThemeColorsArray());
     };
 
-    useEffect(() => {
+    useSkipFirstEffect(() => {
         if (
             Theme_PrimaryColor === "default" &&
             Theme_SecondaryColor === "default"
