@@ -1585,7 +1585,13 @@ const useThemeSlice = () => {
                 Theme_SelectedShadeType_Secondary,
             );
 
-        setTheme_WebApp_Theme(getNewGenaratedTheme());
+        setTheme_WebApp_Theme((prv) =>
+            createTheme({
+                ...prv,
+                ...getNewGenaratedTheme(),
+                components: manualOverrides(getNewGenaratedTheme()),
+            }),
+        );
     }, []);
 
     const setYinYangColors = () => {
@@ -1716,7 +1722,7 @@ const useThemeSlice = () => {
         );
     };
 
-    useEffect(() => {
+    useSkipFirstEffect(() => {
         localStorage.setItem(
             "Theme_PrimaryColor",
             Theme_PrimaryColor,
@@ -1746,7 +1752,7 @@ const useThemeSlice = () => {
         }
     }, [Theme_PrimaryColor, Theme_SelectedShadeType_Primary]);
 
-    useEffect(() => {
+    useSkipFirstEffect(() => {
         localStorage.setItem(
             "Theme_SecondaryColor",
             Theme_SecondaryColor,
